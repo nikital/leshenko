@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>The Holomorph 3000</title>
+    </head>
+    <style>
+     body {
+         display: grid;
+         grid-template-columns: 1fr min-content 1fr min-content;
+         grid-template-rows: min-content auto;
+         margin: 0;
+         width: 100vw;
+         height: 100vh;
+         font-family: sans-serif;
+     }
+     canvas {
+         width: 100%;
+         height: 100%;
+         z-index: 0;
+     }
+     #src {
+         grid-column: 1/3;
+         grid-row: 1/3;
+     }
+     .zoom {
+         margin: 4px 10px 0 0;
+         z-index: 1;
+     }
+     .zoom button {
+         margin-top: 3px;
+         width: 100%;
+     }
+     #zoom-src {
+         grid-column: 2/3;
+         grid-row: 1/2;
+     }
+     #dst {
+         grid-column: 3/5;
+         grid-row: 1/3;
+     }
+     #zoom-dst {
+         grid-column: 4/5;
+         grid-row: 1/2;
+     }
+     #clear {
+         grid-column: 1/2;
+         grid-row: 1/2;
+         width: min-content;
+         margin: 10px;
+         z-index: 1;
+     }
+     #func-form {
+         grid-column: 3/4;
+         grid-row: 1/2;
+         margin: 10px 0 0 10px;
+         z-index: 1;
+     }
+     #message {
+         color: crimson;
+         z-index: 1;
+     }
+     footer {
+         position: fixed;
+         bottom: 0;
+         right: 0;
+         margin: 2px;
+         z-index: 1;
+     }
+     aside {
+         position: fixed;
+         z-index: 2;
+         width: 100vw;
+         height: 100vh;
+         overflow: auto;
+
+         background: #fefefe;
+         color: #454545;
+     }
+
+     aside > div {
+         max-width: 700px;
+         padding: 20px 0;
+         margin: auto;
+     }
+    </style>
+    <body>
+        <canvas id="src"></canvas>
+        <canvas id="dst"></canvas>
+        <div id="zoom-src" class="zoom">
+            <button class="p">+</button>
+            <button class="m">-</button>
+        </div>
+        <div id="zoom-dst" class="zoom">
+            <button class="p">+</button>
+            <button class="m">-</button>
+        </div>
+        <button id="clear">Clear</button>
+        <form id="func-form">
+            <label>f(z)=
+                <input id="func">
+            </label>
+            <input type="submit" value="Set">
+            <span id="message"></span>
+        </form>
+        <footer>
+            copyright &copy 2019 Nikita Leshenko
+            <a href="#">HELP!?</a>
+        </footer>
+        <aside><div>
+            <h1>Holomorphic Function Explorer</h1>
+            <p>
+                In this webapp you can play with functions from ℂ to ℂ. Draw
+                with your mouse on the left side and see your transformed
+                drawing on the right side!
+            </p>
+            <p>
+                You can input a complex function with one variable 𝑧, all the
+                regular operators such as
+                <code>+ - * / ^</code>,
+                <code>re()</code>,
+                <code>im()</code>,
+                <code>sqrt()</code> and
+                <code>abs()</code>
+                are suppored. In general, we support anything that <a href="https://mathjs.org/" target="_blank">math.js</a> can
+                parse.
+            </p>
+            <p>Make sure to adjust the zoom level on each side for the perfect experience.</p>
+            <p>
+                As you mouse over the graph, the complex derivative will be
+                displayed as a 2D linear transformation with red and green
+                arrows for the basis. Check for youself that:
+                <ol>
+                    <li>If you draw around the derivative the drawing will be transformed pretty linearly.</li>
+                    <li>The derivative preserves angles! Cauchy-Riemann FTW.</li>
+                </ol>
+            </p>
+            <h3>Functions without derivatives</h3>
+            <p>
+                If you input a function without complex derivatives, such as <code>e^z+re(z)</code>,
+                we will "approximate" the derivative by treating the function as ℝ²🠂ℝ².
+                Then you can see for yourself how the Cauchy-Riemann equations
+                break down as the derivative no longer preserves angles.
+            </p>
+            <h3>Cool functions to try</h3>
+            <ul>
+                <li><code>e^z</code></li>
+                <li><code>e^z+re(z)</code></li>
+                <li><code>(z+2)^2(z-1-2i)(z+1)</code></li>
+            </ul>
+            <button>Play!</button>
+            <p>If you find any interesting functions please let me know.</p>
+        </div></aside>
+        <script src="bundle.js"></script>
+    </body>
+</html>
