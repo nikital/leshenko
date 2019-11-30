@@ -42,12 +42,16 @@
              grid-column: 4/5;
              grid-row: 1/2;
          }
-         #clear {
+         .clear {
              grid-column: 1/2;
              grid-row: 1/2;
              width: min-content;
              margin: 10px;
              z-index: 1;
+             display: flex;
+         }
+         .clear > * {
+             margin-right: 10px;
          }
          #func-form {
              grid-column: 3/4;
@@ -95,7 +99,11 @@
             <button class="p">+</button>
             <button class="m">-</button>
         </div>
-        <button id="clear">Clear</button>
+        <div class="clear">
+            <button id="clear">Clear</button>
+            <button id="circle">Unit Circle</button>
+            <button id="pacman">Pacman</button>
+        </div>
         <form id="func-form">
             <label>f(z)=
                 <input id="func">
