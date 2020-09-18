@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/syntax.css" />
+    <title>Git Internals - Learn by Building Your Own Git</title>
+</head>
+<body class="loading">
+    <p class="loading-msg">Loading...</p>
+    <section class="message">
+        <h1 class="title">Git Internals by Nikita Leshenko</h1>
+        <div class="message"></div>
+        <details class="comments">
+            <summary>Comments <span class="count"></span></summary>
+            <div class="content"></div>
+            <form>
+                <label for="comment-body">Leave a comment for this change:</label>
+                <textarea name="comment" id="comment-body" required></textarea>
+                <label for="comment-name">Name:</label>
+                <input name="name" id="comment-name" required>
+                <label for="comment-email">Email:</label>
+                <input name="email" type="email" id="comment-email" required>
+                <button disabled>Submit</button>
+                <div class="ok" style="display: none">
+                    Thank you, your comment will be posted shortly!
+                </div>
+            </form>
+        </details>
+    </section>
+
+    <section class="diff">
+        <h1>Diff</h1>
+        <div class="diff-content"></div>
+        <details class="clone-details">
+            <summary>Download</summary>
+            <div class="clone">
+                <span>Clone μgit using:</span>
+                <span class="cmd" id="clone-cmd"></span>
+                <button type="button" class="narrow copy" data-copy-from="clone-cmd">Copy</button>
+
+                <span>Checkout this commit:</span>
+                <span class="cmd" id="checkout-cmd"></span>
+                <button type="button" class="narrow copy" data-copy-from="checkout-cmd">Copy</button>
+            </div>
+        </details>
+    </section>
+
+    <section class="file" style="display: none">
+        <h1>File - <span class="name"></span></h1>
+        <button type="button" class="narrow file-close">
+            <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="12px" height="12px">
+                <title>Close File</title>
+                <path d="M 2 0 L 5 3 L 8 0 L 10 2 L 7 5 L 10 8 L 8 10 L 5 7 L 2 10 L 0 8 L 3 5 L 0 2 z"/>
+            </svg>
+        </button>
+        <div class="file-content"></div>
+    </section>
+
+    <footer>
+        <a class="button narrow" id="home-btn">
+            <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14px" height="14px">
+                <title>Go Home</title>
+                <path d="M 12 2 L 1 12 L 4 12 L 4 21 L 10 21 L 10 15 L 14 15 L 14 21 L 20 21 L 20 12 L 23 12 L 12 2 z"/>
+            </svg>
+        </a>
+        <a class="button" id="prev-btn">Prev</a>
+        <a class="button" id="next-btn">Next</a>
+        <div id="progress-bar" class="progress">
+            <div class="fill"></div>
+            <div class="dots">
+            </div>
+        </div>
+    </footer>
+
+    <div id="loading">
+        <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="12px" height="12px">
+            <title>Loading</title>
+            <path d="M 2 0 L 5 3 L 8 0 L 10 2 L 7 5 L 10 8 L 8 10 L 5 7 L 2 10 L 0 8 L 3 5 L 0 2 z"/>
+        </svg>
+        <span>Loading...</span>
+    </div>
+
+    <script src="bundle.js"></script>
+</body>
+</html>
