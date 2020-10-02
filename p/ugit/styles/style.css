@@ -44,6 +44,10 @@ body.loading section {
     display: none;
 }
 
+a {
+    color: #229122;
+}
+
 section.message {
     grid-area: message;
     z-index: 0;
