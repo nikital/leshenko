@@ -7,6 +7,7 @@
     <style>
      html {
          background: beige;
+         direction: rtl;
      }
      button {
          background-color: #4CAF50;
@@ -26,6 +27,8 @@
     <audio id="stop_study" src="stop_study.mp3"></audio>
     <button data-play="sleep" style="background-color: red">לישון!</button>
     <audio id="sleep" src="sleep.mp3"></audio>
+    <button data-play="sleep2" style="background-color: darkred">לישון!!!</button>
+    <audio id="sleep2" src="sleep2.mp3"></audio>
     <script>
      document.querySelectorAll("button").forEach((btn) => btn.addEventListener("click", play))
      function play(e) {
