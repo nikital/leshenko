@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Soundboard</title>
+    <style>
+     html {
+         background: beige;
+     }
+     button {
+         background-color: #4CAF50;
+         width: 150px;
+         height: 150px;
+         border-radius: 50%;
+         color: white;
+         padding: 20px;
+         text-align: center;
+         margin: 4px 2px;
+         font-size: 20px;
+     }
+    </style>
+</head>
+<body>
+    <button data-play="stop_study" style="background-color: teal">די ללמוד</button>
+    <audio id="stop_study" src="stop_study.mp3"></audio>
+    <button data-play="sleep" style="background-color: red">לישון!</button>
+    <audio id="sleep" src="sleep.mp3"></audio>
+    <script>
+     document.querySelectorAll("button").forEach((btn) => btn.addEventListener("click", play))
+     function play(e) {
+         let audio = document.getElementById(e.target.dataset.play)
+         audio.play()
+     }
+    </script>
+</body>
+</html>
