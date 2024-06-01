@@ -1,0 +1,13 @@
+name: Monitor
+on:
+  schedule:
+    - cron: '13 16 * * *'
+  workflow_dispatch:
+
+jobs:
+  monitor-api:
+    name: Monitor API
+    runs-on: ubuntu-latest
+    steps:
+      - name: ugit-api
+        run: curl https://ugit-api.leshenko.net/
