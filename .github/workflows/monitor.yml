@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: '13 16 * * *'
   workflow_dispatch:
+permissions: {}
 
 jobs:
   monitor-api:
