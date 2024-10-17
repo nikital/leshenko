@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ugit-api
-        run: curl https://ugit-api.leshenko.net/
+        run: curl --max-time 10 https://ugit-api.leshenko.net/
