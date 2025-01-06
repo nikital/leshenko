@@ -4,39 +4,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nikita's Homepage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
     <style>
-     html {
-         font-family: 'Zilla Slab', serif;
-         background-color: #C2E5F2;
-         background-image: url(/waves.svg);
-         background-size: cover;
-         background-repeat: no-repeat
-     }
-     main {
-         padding: 20px;
-         margin: 20px auto;
-         max-width: 600px;
-     }
-     @media (min-width: 650px) {
-         main {
-             border: 3px solid #013440;
-         }
-     }
-     h1 {
-         color: #013440;
-     }
-     a {
-         color: #03658C;
-     }
+      html {
+          font-family: "Roboto Slab", serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-style: normal;
+          background-color: #C2E5F2;
+          background-image: url(/waves.svg);
+          background-size: cover;
+          background-repeat: no-repeat
+      }
+      main {
+          padding: 20px;
+          margin: 20px auto;
+          max-width: 600px;
+      }
+      @media (min-width: 650px) {
+          main {
+              border: 3px solid #013440;
+          }
+      }
+      h1 {
+          color: #013440;
+      }
+      a {
+          color: #03658C;
+      }
     </style>
 </head>
 <body>
     <main>
         <h1>Nikita's Homepage</h1>
-        <p>Quick Links:<ul>
+        <p>Quick Links:</p>
+        <ul>
             <li>
-                <a href="https://www.leshenko.net/p/ugit/">μgit</a>
+                <a href="/p/ugit/">μgit</a>
                 <p>Learn Git internals by building Git yourself in Python</p>
             </li>
             <li>
@@ -61,11 +67,14 @@
                 <p>Toy simulation of a 2D ball with thrusters</p>
             </li>
             <li>
-                <a href="https://www.leshenko.net/p/holomorph/">Holomorph</a>
+                <a href="/p/birthday_song/">Я учусь в третьем классе</a>
+                <p>Хорошо что день рождения только раз в году.</p>
+            </li>
+            <li>
+                <a href="/p/holomorph/">Holomorph</a>
                 <p>Holomorphic function explorer</p>
             </li>
         </ul>
-        </p>
     </main>
 </body>
 </html>
